@@ -15,7 +15,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-        //
+        return view('tasks.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class TasksController extends Controller
      */
     public function create()
     {
-        //
+        return view('tasks.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('tasks.show', ["id" => $id]);
     }
 
     /**
@@ -58,7 +58,7 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('tasks.edit', ["id" => $id]);
     }
 
     /**

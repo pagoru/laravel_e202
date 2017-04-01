@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Project;
 
 class ProjectsController extends Controller
 {
@@ -15,7 +16,8 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::all();
+        return view('projects.index', ['projects' => $projects]);
     }
 
     /**
@@ -25,7 +27,7 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.create');
     }
 
     /**
@@ -36,7 +38,8 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newProject = Project::create($request->all());
+        return redirect('projects');
     }
 
     /**
@@ -47,7 +50,8 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Project::find($id);
+        return view('projects.show', ["project" => $project]);
     }
 
     /**
@@ -58,7 +62,7 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('projects.edit', ["id" => $id]);
     }
 
     /**
@@ -70,7 +74,9 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = Project::find($id);
+        $project->update($request->all());
+        return redirect('projects');
     }
 
     /**
