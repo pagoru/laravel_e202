@@ -5,8 +5,12 @@
 @stop
 @section('content')
 
-    {!! !Form::open(array('url' => 'tasks')) !!}
+    {!! !Form::open(array('url' => 'projects/'.$projectid.'/tasks')) !!}
 
+        <div class="form-group">
+            {!! From::label('project_id', 'Project Id:'.$projectid) !!}
+            {!! Form:text('project_id', $projectid, ['class' => 'form-control', 'readonly' => 'true'] !!}
+        </div>
         <div class="form-group">
             {!! Form::label('name', 'Name:') !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}

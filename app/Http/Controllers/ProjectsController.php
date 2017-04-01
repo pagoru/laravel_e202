@@ -87,6 +87,8 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Project::find($id);
+        $task->delete();
+        return redirect('projects');
     }
 }

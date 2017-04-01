@@ -10,7 +10,7 @@
     @else
         <ul>
             @foreach($tasks as $task)
-                <li><a href="{{route('task.show', $task->id)}}">Id project: {{$task->id}}</a></li>
+                <li><a href="{{route('projects.task.show', $task->project_id, $task->id)}}">Id task: {{$task->id}}</a></li>
                 <ul>
                     <li>Name: {{$task->name}}</li>
                     <li>Project id: {{$task->project_id}}</li>

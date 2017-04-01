@@ -36,6 +36,13 @@
         </div>
     </div>
 
+    {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.destroy', $project->id))) !!}
+        <div class="btn-group" role="group">
+            {!! link_to_route('projects.edit', 'Edit', array($project->id), array('class' => 'btn btn-info')) !!}
+            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+        </div>
+    {!! Form::close() !!}
+
 @stop
 @section('footer')
     <p>Pablo Gonzalez Rubio - 2017</p>

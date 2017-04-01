@@ -5,7 +5,7 @@
 @stop
 @section('content')
 
-    {!! !Form::model($task, ['method' => 'PATCH', 'route'=>['tasks.update', $task->id]]) !!}
+    {!! !Form::model($task, ['method' => 'PATCH', 'route'=>['projects.tasks.update', $projectid, $task->id]]) !!}
 
     <div class="form-group">
         {!! Form::label('name', 'Name:') !!}
